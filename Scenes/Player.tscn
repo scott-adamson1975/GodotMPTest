@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://cygp0nvuy7yhh"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_1fnsu"]
+[ext_resource type="Script" path="res://Scripts/InputSynchronizer.cs" id="3_hne13"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3olja"]
+load_path = "res://.godot/imported/ship_0001.png-e943993ad8f1beeca69ab3e2675982c2.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gf6ny"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_3dvon"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_qsa2d"]
+properties/0/path = NodePath("InputSynchronizer:TurnInput")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(200, 200)
+script = ExtResource("1_1fnsu")
+
+[node name="Ship0003" type="Sprite2D" parent="."]
+texture = SubResource("CompressedTexture2D_3olja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gf6ny")
+
+[node name="PlayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_3dvon")
+
+[node name="InputSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_qsa2d")
+script = ExtResource("3_hne13")

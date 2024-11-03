@@ -1,3 +1,11 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+.vs/MPTest/DesignTimeBuild/.dtbcache.v2
+.vs/MPTest/FileContentIndex/2c656468-0c25-4d88-ae69-7a41bcc268be.vsidx
+.vs/MPTest/v17/.futdcache.v2
+.vs/MPTest/v17/.suo
+.vs/MPTest/v17/DocumentLayout.json
+.vs/ProjectEvaluation/mptest.metadata.v8.bin
+.vs/ProjectEvaluation/mptest.projects.v8.bin
+.vs/ProjectEvaluation/mptest.strings.v8.bin
